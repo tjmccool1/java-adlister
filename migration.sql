@@ -1,24 +1,22 @@
 USE adlister_db;
 
 DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS ads;
+
 CREATE TABLE users(
   id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  username VARCHAR(25),
-  email VARCHAR(100),
-  password VARCHAR(25),
+  username VARCHAR(25) NOT NULL,
+  email VARCHAR(100) NOT NULL,
+  password VARCHAR(25) NOT NULL,
   PRIMARY KEY (id)
 );
 
-DROP TABLE IF EXISTS ads;
+
 CREATE TABLE ads(
   id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  user_id INT UNSIGNED,
-  title VARCHAR(100),
-  desctiption LONGBLOB,
-
-  KEY (id),
-#   KEY (user_id),
-
+  user_id INT UNSIGNED NOT NULL,
+  title VARCHAR(100) NOT NULL,
+  desctiption TEXT NOT NULL ,
 
   FOREIGN KEY (user_id)
     REFERENCES users(id)
