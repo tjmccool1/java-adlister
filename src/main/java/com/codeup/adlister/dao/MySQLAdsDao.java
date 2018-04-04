@@ -1,5 +1,6 @@
 package com.codeup.adlister.dao;
 
+import com.codeup.adlister.Config;
 import com.codeup.adlister.models.Ad;
 import com.mysql.cj.jdbc.Driver;
 
@@ -12,6 +13,8 @@ import java.util.List;
 
 public class MySQLAdsDao implements Ads {
     private Connection connection = null;
+
+
 
     public MySQLAdsDao(Config config) {
         try {
